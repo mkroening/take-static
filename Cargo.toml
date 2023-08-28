@@ -1,0 +1,13 @@
+[package]
+name = "take-static"
+version = "0.1.0"
+authors = ["Martin Kröning <mkroening@posteo.net>"]
+edition = "2021"
+description = "Static items that provide mutable access only once."
+repository = "https://github.com/mkroening/take-static"
+license = "MIT OR Apache-2.0"
+keywords = ["take", "static", "once", "singleton"]
+categories = ["rust-patterns", "memory-management", "no-std"]
+
+[dependencies]
+call-once = "0.1"
