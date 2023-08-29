@@ -1,7 +1,7 @@
 //! This crate provides the [`take_static`] macro to create statics that provide mutable access only once:
 //!
 //! ```
-//! use take_static::{take_static, TakeStatic};
+//! use take_static::take_static;
 //!
 //! take_static! {
 //!     static NUMBER: usize = 5;
@@ -43,7 +43,7 @@ use call_once::CallOnce;
 /// # Examples
 ///
 /// ```
-/// use take_static::{take_static, TakeStatic};
+/// use take_static::take_static;
 ///
 /// take_static! {
 ///     static NUMBER: usize = 5;
@@ -111,7 +111,7 @@ impl<T> TakeStatic<T> {
     /// # Examples
     ///
     /// ```
-    /// use take_static::{take_static, TakeStatic};
+    /// use take_static::TakeStatic;
     ///
     /// static TAKE_STATIC: TakeStatic<usize> = unsafe { TakeStatic::new(5) };
     /// ```
@@ -139,7 +139,7 @@ impl<T: ?Sized> TakeStatic<T> {
     /// # Examples
     ///
     /// ```
-    /// use take_static::{take_static, TakeStatic};
+    /// use take_static::take_static;
     ///
     /// take_static! {
     ///     static TAKE_STATIC: usize = 5;
@@ -163,7 +163,7 @@ impl<T: ?Sized> TakeStatic<T> {
     /// # Examples
     ///
     /// ```
-    /// use take_static::{take_static, TakeStatic};
+    /// use take_static::take_static;
     ///
     /// take_static! {
     ///     static TAKE_STATIC: usize = 5;

@@ -7,7 +7,7 @@
 This crate provides the [`take_static`] macro to create statics that provide mutable access only once:
 
 ```rust
-use take_static::{take_static, TakeStatic};
+use take_static::take_static;
 
 take_static! {
     static NUMBER: usize = 5;
