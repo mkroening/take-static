@@ -16,6 +16,7 @@
 #![no_std]
 
 use core::cell::UnsafeCell;
+use core::fmt;
 
 use call_once::CallOnce;
 
@@ -52,10 +53,18 @@ use call_once::CallOnce;
 /// assert_eq!(NUMBER.take(), Some(&mut 5));
 /// assert_eq!(NUMBER.take(), None);
 /// ```
-#[derive(Debug)]
 pub struct TakeStatic<T: ?Sized> {
     taken: CallOnce,
     data: UnsafeCell<T>,
+}
+
+impl<T: ?Sized> fmt::Debug for TakeStatic<T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("TakeStatic")
+            .field("taken", &self.taken)
+            .field("data", &&self.data)
+            .finish()
+    }
 }
 
 // SAFETY: This is safe even without `Send` bound,
