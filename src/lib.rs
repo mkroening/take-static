@@ -81,6 +81,7 @@ unsafe impl<T: ?Sized> Sync for TakeStatic<T> {}
 ///
 /// ```
 /// use take_static::take_static;
+///
 /// take_static! {
 ///     pub static FOO: u32 = 1;
 ///
