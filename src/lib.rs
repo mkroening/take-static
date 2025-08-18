@@ -161,6 +161,7 @@ impl<T: ?Sized> TakeStatic<T> {
     /// ```
     #[inline]
     #[must_use]
+    #[expect(clippy::mut_from_ref)]
     pub fn take(&self) -> Option<&mut T> {
         self.taken
             .call_once()
