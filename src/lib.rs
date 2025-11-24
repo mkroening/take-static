@@ -192,8 +192,6 @@ impl<T: ?Sized> TakeStatic<T> {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
     fn visibility() {
         take_static! {
@@ -201,8 +199,6 @@ mod tests {
         }
 
         mod module {
-            use super::*;
-
             take_static! {
                 static _SELF: u8 = 3;
                 pub(super) static SUPER: u8 = 3;
